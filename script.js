@@ -3191,3 +3191,31 @@ generateGridCells();
 loadTheme();
 updateSplashCta();
 renderStatsLine();
+// =============================================================
+// PWA INSTALLATION POPUP ENGINE FOR FIRST-TIME USERS
+// =============================================================
+function checkPwaPromptOnLoad() {
+  const alreadySeen = localStorage.getItem('ludoRoyale_pwaPrompt_seen');
+  if (!alreadySeen) {
+    // ১.৫ সেকেন্ড ডিলে দিয়ে পপআপটি মার্জিতভাবে স্ক্রিনে ভেসে উঠবে
+    setTimeout(() => {
+      const modal = document.getElementById('pwa-prompt-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        playSound('turn'); // পপআপ শো করার সময় একটি হালকা অডিও সাউন্ড প্লে হবে
+      }
+    }, 1500);
+  }
+}
+
+function dismissPwaPrompt() {
+  playSound('click');
+  localStorage.setItem('ludoRoyale_pwaPrompt_seen', 'true');
+  const modal = document.getElementById('pwa-prompt-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+}
+
+// গেম বুটস্ট্র্যাপ ইভেন্টে এটি কল করে দিন
+checkPwaPromptOnLoad();

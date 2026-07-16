@@ -533,6 +533,33 @@
   </defs>
 </svg>
 
+<!-- =============================================================
+       PREMIUM PWA PROMPT MODAL (ADD TO HOME SCREEN)
+       ============================================================= -->
+  <div class="modal-overlay hidden" id="pwa-prompt-modal">
+    <div class="modal-content pwa-prompt-card">
+      <div class="pwa-badge-glow">
+        <img src="icon-192.png" class="pwa-prompt-logo" alt="Ludo Royale Logo">
+      </div>
+      <h2>INSTALL LUDO ROYALE</h2>
+      <p class="pwa-prompt-subtitle">Seamless App Experience</p>
+      
+      <div class="pwa-benefits-list">
+        <div class="benefit-item">⚡ <span>Instantly load and play offline</span></div>
+        <div class="benefit-item">🔋 <span>Zero storage space & battery optimized</span></div>
+        <div class="benefit-item">🏆 <span>Full-screen immersive championship play</span></div>
+      </div>
+      
+      <p class="pwa-prompt-note">Add this progressive web app (PWA) to your home screen for the ultimate standalone gaming experience.</p>
+      
+      <div class="modal-actions-row">
+        <button class="action-btn ghost-gold-btn" onclick="dismissPwaPrompt()">SKIP</button>
+        <!-- Replace 'https://www.youtube.com/watch?your-video-id' with your actual tutorial video link -->
+        <a href="https://www.facebook.com/share/1AwJTrQJGq/" target="_blank" class="action-btn pwa-tutorial-btn" onclick="dismissPwaPrompt()">TUTORIAL</a>
+      </div>
+    </div>
+  </div>
+  
 <script src="script.js"></script>
 
 <!-- Progressive Web App Registration Script (Explicitly binds to service-worker.js) -->
